@@ -31,5 +31,3 @@ if __name__ == '__main__':
     r = Rectangle(int(arr[0]), int(arr[1]), int(arr[2]))
 
     print('{} {} {}'.format(r.perimeter(), r.area(), r.color()))
-    t = int(input())
-    string = string(t)
