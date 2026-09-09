@@ -20,41 +20,28 @@
 #     t-=1
 
 
-
 t = int(input())
+arr = []
 
-ans = []
+def check(s):
+    for ss in s:
+        if ss not in "02468":
+            return False
+    return True
 
-# i là nửa đầu của số thuận nghịch
-for i in range(1, 1000):
-
+for i in range (1,1000): 
     s = str(i)
-
-    # Tạo số thuận nghịch
-    s = s + s[::-1]
-
-    # Kiểm tra toàn chữ số chẵn
-    ok = True
-
-    for c in s:
-        if c not in "02468":
-            ok = False
-            break
-
-    if ok:
-        ans.append(int(s))
-
-
-while t > 0:
-
+    if check(s) == False:
+        continue
+    s = s + s[::-1] # 123321
+    arr.append(s)
+        
+for _ in range(t):
     n = int(input())
-
-    for x in ans:
-        if x >= n:
+    for i in range (len(arr)):
+        num = int(arr[i])
+        if int(arr[i]) >= n:
             break
-
-        print(x, end=" ")
-
-    print()
-
-    t -= 1
+        else:
+            print(num,end=" ")
+    print()            
