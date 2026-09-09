@@ -1,31 +1,37 @@
-s1 = input()
-s2 = input()
+t = int(input())
 
-arr1 = s1.lower().split(" ")
-arr2 = s2.lower().split(" ")
+ans = []
 
-set1 = set(arr1)
-set2 = set(arr2)
+# i là nửa đầu của số thuận nghịch
+for i in range(1, 1000):
 
-d = dict()
-for x in set1:
-    if x not in d:
-        d[x] = 1
-    else:
-        d[x] += 1 
-for x in set2:
-    if x not in d:
-        d[x] = 1
-    else:
-        d[x] += 1 
+    s = str(i)
 
-dSorted = dict(sorted(d.items()))
-# hop    
-for key, value in dSorted.items():
-    if value >= 1:
-        print(key, end = " ")
-print()
-# giao
-for key, value in dSorted.items():
-    if value > 1:
-        print(key, end = " ")   
+    # Tạo số thuận nghịch
+    s = s + s[::-1]
+
+    # Kiểm tra toàn chữ số chẵn
+    ok = True
+
+    for c in s:
+        if c not in "02468":
+            ok = False
+            break
+
+    if ok:
+        ans.append(int(s))
+
+
+while t > 0:
+
+    n = int(input())
+
+    for x in ans:
+        if x >= n:
+            break
+
+        print(x, end=" ")
+
+    print()
+
+    t -= 1
