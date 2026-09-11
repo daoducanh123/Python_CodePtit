@@ -9,7 +9,7 @@ def demuoc(n):
 t = int (input())
 for _ in range(t):
     x = int(input())
-    n=1
+    n = 1
     max_uoc = 0
     while True:
         so_uoc = demuoc(n)
