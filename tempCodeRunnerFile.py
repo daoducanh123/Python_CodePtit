@@ -1,38 +1,16 @@
-class PhanSo:
-    def __init__(self,tu,mau):
-        self.tu = tu
-        self.mau = mau
+def Tong(s):
+    res = 0
+    for i in range (len(s)):
+        res += int(s[i])
+    return res
 
-
-    def Output (self):
-        print(f"{self.tu:.0f}/{self.mau:.0f}")
-
-    def Rutgon (self):
-        gcd = UCLN(self.tu, self.mau)
-        self.tu //= gcd
-        self.mau //= gcd
-
-    def sum (self, p2):
-        sumTu = self.tu * p2.mau + p2.tu * self.mau
-        sumMau = self.mau * p2.mau
-        tong = PhanSo(sumTu, sumMau)
-        tong.Rutgon()
-
-        print(f"{tong.tu}/{tong.mau}")
-        
-
-def UCLN(a,b):
-    while b > 0:
-        tmp = a
-        a = b
-        b = tmp % a
-    return a
-
-
-arr = input().split()
-p1 = PhanSo(int(arr[0]), int(arr[1]))
-p2 = PhanSo(int(arr[0]), int(arr[1]))
-
-
-p1.sum(p2)
-
+n = int(input())
+if n < 0:
+    n = abs(n)
+s = str(n)
+cnt = 0
+while(len(s) > 1):
+    tong = Tong(s)
+    cnt += 1
+    s = str(tong)
+print(cnt)
