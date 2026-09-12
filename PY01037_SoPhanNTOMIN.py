@@ -1,22 +1,21 @@
-# Cho số nguyên dương X, hãy tìm số phản nguyên tố bé nhất >  X.
-def CountUoc(n):
-    cnt = 0
-    for i in range(1, n + 1):
+def demuoc(n):
+    dem = 0
+    for i in range(1, n+1):
         if n % i == 0:
-            cnt+=1
-    return cnt
+            dem += 1
+            
+    return dem
 
 t = int (input())
 for _ in range(t):
     x = int(input())
-    
-    # 1, 2, 4, 6, 12, 24, …
-    maxUoc = -1
     n = 1
+    max_uoc = 0
     while True:
-        cntUoc = CountUoc(n)
-        if cntUoc > maxUoc:
-            maxUoc = cntUoc
+        so_uoc = demuoc(n)
+        
+        if so_uoc > max_uoc:
+            max_uoc = so_uoc
             
             if n >= x:
                 print(n)
