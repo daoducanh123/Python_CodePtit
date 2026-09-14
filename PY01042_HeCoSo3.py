@@ -1,6 +1,6 @@
 t = int(input())
 for _ in range(t):
-    s = input()
+    s = input() 
     ok = True
     for i in range(len(s)):
         if s[i] not in "012":
