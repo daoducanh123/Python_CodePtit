@@ -12,3 +12,5 @@ for _ in range(t):
     for p in permutations(a):
         print(''.join(map(str,p)),end = ' ')
     print()
+    
+    
