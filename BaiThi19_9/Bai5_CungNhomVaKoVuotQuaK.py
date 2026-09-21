@@ -1,6 +1,6 @@
 n,k = map (int,input().split())
 a = list(map(int,input().split()))
-a = sorted(a)
+a =     sorted(a)
 
 cnt = 1
 

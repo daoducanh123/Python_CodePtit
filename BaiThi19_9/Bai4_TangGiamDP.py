@@ -16,4 +16,4 @@ for _ in range(t):
             if a[j] < a[i] and b[j] > b[i]:
                 dp[i] = max(dp[i],dp[j]+1)
                 
-    print(max(dp))
+    print(max(dp))  
