@@ -21,11 +21,15 @@ isPrime, primes = SangSoNto() # bonus primes
 n,m = map(int,input().split())
 a = [[0] * m for _ in range(n)]
 
+# quan trongj
+# 3 3
+# 1 2 3
+# 4 5 6
+# 7 8 9
+
 for i in range(n):
-    for j in range(m):
-        x = int(input())
-        a[i][j] = x
-        
+    a[i] = list (map(int, input().split()))
+    
 for i in range(n):
     for j in range(m):
         if isPrime[a[i][j]] == True:
