@@ -1,6 +1,11 @@
 se = set()
-arr = list(map(int,input().split()))
-for i in range(len(arr)):
-    se.add(arr[i] % 42)
-    
+count = 0
+
+while count < 10:
+    arr = list(map(int, input().split()))
+    count += len(arr)
+
+    for x in arr:
+        se.add(x % 42)
+
 print(len(se))
