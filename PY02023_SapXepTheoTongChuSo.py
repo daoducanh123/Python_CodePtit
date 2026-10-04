@@ -3,20 +3,19 @@ t = int(input())
 for _ in range(t):
     n = int(input())
     arr = input().split()
-
-    d = dict()
+    a = []
     
-
-    for i in range(len(arr)):
+    for stringNum in arr:
         total = 0
-
-        for j in range(len(arr[i])):
-            total += int(arr[i][j])
-        d[arr[i]] = total   
-
+        for s in stringNum:
+            num = int(s)
+            total += num
+        a.append((int(stringNum), total))
     
-    d = sorted(d.items(), key=lambda x: int(x[0]))
-    d = sorted(d, key=lambda x: x[1])
-    
-    for x in d:
-        print(x[0], end = " ")        
+    # Hãy sắp xếp dãy số theo tổng chữ số tăng dần. Nếu tổng chữ số bằng nhau thì số nào nhỏ hơn sẽ viết trước.
+    a = sorted(a, key = lambda x: x[0]) 
+    a = sorted(a, key = lambda x: x[1]) 
+    for x in a:
+        print(x[0], end=" ")
+
+    print()
