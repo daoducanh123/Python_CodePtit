@@ -1,21 +1,20 @@
 t = int(input())
-
 for _ in range(t):
     n = int(input())
-    arr = input().split()
-    a = []
+    arrInput = input().split()
     
-    for stringNum in arr:
-        total = 0
-        for s in stringNum:
-            num = int(s)
-            total += num
-        a.append((int(stringNum), total))
+    arrSum = list()
+    for a in arrInput:
+        num = int(a)
+        sum = 0
+        for aa in a:
+            sum += int(aa)
+        arrSum.append([num,sum])
     
-    # Hãy sắp xếp dãy số theo tổng chữ số tăng dần. Nếu tổng chữ số bằng nhau thì số nào nhỏ hơn sẽ viết trước.
-    a = sorted(a, key = lambda x: x[0]) 
-    a = sorted(a, key = lambda x: x[1]) 
-    for x in a:
-        print(x[0], end=" ")
-
+    arrSum = sorted (arrSum, key = lambda x: x[0])
+    arrSum = sorted (arrSum, key = lambda x: x[1])
+    
+    for i in range(len(arrSum)):
+        print(arrSum[i][0] , end=" ")
+    
     print()
