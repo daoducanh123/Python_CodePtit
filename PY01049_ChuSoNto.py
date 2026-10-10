@@ -3,7 +3,7 @@ isPrime = [True] * 100005
 isPrime[0] = isPrime[1] = False
 
 def Sang():
-    for i in range(2, math.sqrt(100000)+1) :
+    for i in range(2, int(math.sqrt(100000))+1) :
         if isPrime[i] == True:
             for j in range(i*i, 100001, i):
                 isPrime[j] = False
