@@ -4,24 +4,29 @@ class HoaDon:
         self.name= name
         self.cnt = cnt
 
-        if cnt <= 50: self.total = round (100*cnt*1.02)
-        
-        elif cnt <= 100 : self.total = round((5000+(cnt-50)*150)*1.03)
-        else: self.total = round((5000+50*150+200*(cnt-100))*1.05)
+# Tổng số tiền (được làm tròn ở dạng số nguyên)
+        if cnt <= 50: 
+            self.total = round (100*cnt*1.02)
+        elif cnt <= 100 : 
+            self.total = round((5000+(cnt-50)*150)*1.03)
+        else: 
+            self.total = round((5000+50*150+200*(cnt-100))*1.05)
         
     def printt(self):
         print(self.id, self.name, self.total)
         
-z= []
-for _ in range(int(input())):
-    s = input()
+res = list()
+t = int(input())
+for i in range(t):
+    id = f"KH{i+1:02d}"
+    name = input()
     a = int(input())
     b = int(input())
-    cnt = b -a
-    id = f"KH{_+1:02d}"
-    e = HoaDon (id,s,cnt)
-    z.append(e)
+    cnt = b - a
+
+    hoaDon = HoaDon (id,name,cnt)
+    res.append(hoaDon)
     
-z = sorted(z,key=lambda x: -x.total)
-for i in z:
+res = sorted(res,key=lambda x: x.total, reverse= True)
+for i in res:
     i.printt()
