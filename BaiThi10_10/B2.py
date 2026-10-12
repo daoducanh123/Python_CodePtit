@@ -6,11 +6,11 @@ class HoaDon:
 
 # Tổng số tiền (được làm tròn ở dạng số nguyên)
         if cnt <= 50: 
-            self.total = round (100*cnt*1.02)
-        elif cnt <= 100 : 
-            self.total = round((5000+(cnt-50)*150)*1.03)
-        else: 
-            self.total = round((5000+50*150+200*(cnt-100))*1.05)
+            self.total = 100*cnt
+            self.total += self.total * 0.02
+            self.total = round(self.total)
+        elif cnt <= 100 : self.total = round((5000+(cnt-50)*150)*1.03)
+        else: self.total = round((5000+50*150+200*(cnt-100))*1.05)
         
     def printt(self):
         print(self.id, self.name, self.total)
