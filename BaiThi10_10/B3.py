@@ -7,8 +7,13 @@ class NhanVien:
         self.d1 = d1
         self.d2 = d2
         self.dtb = (d1 + d2) / 2
-        # self.msv = f"TS{NhanVien.cnt:02d}" sai?????
-        self.msv = "TS0{}".format(_+1)
+        
+        if NhanVien.cnt >= 10:
+            self.msv = f"TS0{NhanVien.cnt}"
+        else: 
+            self.msv = f"TS{NhanVien.cnt:02d}"
+        # self.msv = f"TS{NhanVien.cnt:02d}" s 
+        # self.msv = "TS0{}".format(_+1) dung
         self.rank = ""
 
     def CanNhac(self):
