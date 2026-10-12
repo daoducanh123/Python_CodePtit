@@ -28,7 +28,7 @@ for _  in range(soHocSinh):
     sum = (arrGpa[0] + arrGpa[1]) * 2
     for i in range(2, 10):
         sum += arrGpa[i]
-    avg = round(sum / 12+0.0001 , 1)
+    avg = round((sum / 12)+0.0001 , 1)
      
     hocSinh = HocSinh(name, arrGpa, avg)
     HocSinh.cnt += 1
