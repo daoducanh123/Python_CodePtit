@@ -1,4 +1,3 @@
-
 class Matrix:
     def __init__(self, n, m):
         self.n = n
@@ -13,12 +12,12 @@ class Matrix:
         matrix_trans = list()
 
         for i in range(self.m):
-            column = list()
+            row = list()
 
             for j in range(self.n):
-                column.append(self.a[j][i])
+                row.append(self.a[j][i])
 
-            matrix_trans.append(column)
+            matrix_trans.append(row)
 
         return matrix_trans
 
@@ -29,7 +28,7 @@ class Matrix:
         for i in range(self.n):
             row = list()
 
-            for j in range(len(other[0])):
+            for j in range(len(other[0])): # số cột của other
                 s = 0
 
                 for k in range(self.m):
@@ -52,5 +51,7 @@ for _ in range(t):
     matrix_trans = matrix.Trans()
     c = matrix.Nhan(matrix_trans)
 
-    for row in c:
-        print(*row)
+    for i in range(len(c)):
+        for j in range(len(c[i])):
+            print (c[i][j] , end = " ")
+        print()
