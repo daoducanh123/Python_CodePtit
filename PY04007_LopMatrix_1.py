@@ -1,57 +1,41 @@
 class Matrix:
-    def __init__(self, n, m):
+    def __init__(self,n,m):
         self.n = n
         self.m = m
         self.a = list()
-
-        for i in range(n):
-            row = list(map(int, input().split()))
+        for _ in range(n):
+            row = list(map(int,input().split()))
             self.a.append(row)
-
     def Trans(self):
-        matrix_trans = list()
-
+        matran_trans = list()
         for i in range(self.m):
             row = list()
-
             for j in range(self.n):
                 row.append(self.a[j][i])
-
-            matrix_trans.append(row)
-
-        return matrix_trans
-
+            matran_trans.append(row)
+        return matran_trans
+    
     def Nhan(self, other):
-        c = list()
-
-        # self (n,m) * other (m,n) = c (n,n)
-        for i in range(self.n):
+        matran_res = list()
+        for i in range (self.n): # lay so hang
             row = list()
-
-            for j in range(len(other[0])): # số cột của other
+            for j in range(len(other[0])): # lay so cot cua list other
                 s = 0
-
-                for k in range(self.m):
-                    s += self.a[i][k] * other[k][j]
-
+                for k in range (self.m):
+                    s+= self.a[i][k] * other[k][j]
                 row.append(s)
+            matran_res.append(row)
+        return matran_res
 
-            c.append(row)
-
-        return c
-
-
-# main
-t = int(input())
-
+t= int(input())
 for _ in range(t):
-    n, m = map(int, input().split())
-    matrix = Matrix(n, m)
-
+    n,m = map(int,input().split())
+    matrix  = Matrix(n,m)
     matrix_trans = matrix.Trans()
-    c = matrix.Nhan(matrix_trans)
-
-    for i in range(len(c)):
-        for j in range(len(c[i])):
-            print (c[i][j] , end = " ")
+    matrix_res = matrix.Nhan(matrix_trans)
+    
+    for i in range(len(matrix_res)):
+        for j in range(len(matrix_res[i])):
+            print(matrix_res[i][j], end=" ")
         print()
+    
