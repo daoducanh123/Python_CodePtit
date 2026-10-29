@@ -31,8 +31,8 @@ for _ in range(n):
     endTime = datetime.strptime(endTimeStr, "%H:%M")
     startTime = datetime.strptime("06:00", "%H:%M")
 
-    minutes = (endTime - startTime).total_seconds() / 60
-    speed = round(120 * 60 / minutes)
+    time = (endTime - startTime).total_seconds() / 3600
+    speed = round(120 / time)
 
     person = Person(name, place, endTime, speed)
     person.Ma()
