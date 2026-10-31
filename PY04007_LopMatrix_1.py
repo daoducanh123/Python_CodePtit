@@ -22,7 +22,7 @@ class Matrix:
             for j in range(len(other[0])): # lay so cot cua list other
                 s = 0
                 for k in range (self.m):
-                    s+= self.a[i][k] * other[k][j]
+                    s+= self.a[i][k] * other.a[k][j]
                 row.append(s)
             matran_res.append(row)
         return matran_res
